@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  city-statement-auth-service:
+    image: city-statement-auth-service:1.0.0
+    container_name: city-statement-auth-service
+    ports:
+      - 8585:8585
+    environment:
+     SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/city-statement-security?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+     SPRING_DATASOURCE_USERNAME: admin
+     SPRING_DATASOURCE_PASSWORD: 1234
+    depends_on:
+      - mysqldb
+    networks:
+      - spring-network
+
+
+  mysqldb:
+    image: mysql:8.0.37
+    container_name: mysqldb
+    ports:
+     - 3307:3306
+    environment:
+      DATABASE_HOST: docker-mysql
+      DATABASE_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: city-statement-security
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 1234
+    networks:
+    - spring-network
+
+networks:
+ spring-network:
+   driver: bridge

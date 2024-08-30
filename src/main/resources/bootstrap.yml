@@ -1,0 +1,10 @@
+server:
+  port: ${SERVER_PORT:8585}
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:city-statement-auth-service}
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  config:
+    import: optional:configserver:${CONFIG_SERVER_BASE_URL:http://localhost:8888}

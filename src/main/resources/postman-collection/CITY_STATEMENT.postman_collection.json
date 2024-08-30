@@ -1,0 +1,1493 @@
+{
+	"info": {
+		"_postman_id": "01ffb3a7-313d-4dff-b430-d02afebb75b5",
+		"name": "CITY_STATEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12960706",
+		"_collection_link": "https://lunar-water-376802.postman.co/workspace/CITY_BANK~56a93c61-17bd-4371-b2f3-e6cc3b8ea85d/collection/12960706-01ffb3a7-313d-4dff-b430-d02afebb75b5?action=share&source=collection_link&creator=12960706"
+	},
+	"item": [
+		{
+			"name": "city-statement-api-gateway-service",
+			"item": [
+				{
+					"name": "city-statement-auth-service",
+					"item": [
+						{
+							"name": "welcome-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDg2MywiaWF0IjoxNzIzMDUwNTYzLCJzY29wZSI6IlJFQUQifQ.elCiaxGv65FPwK_oVvHHW0vavAkkp_DIoJEgAYWtQHc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/api/v1/welcome-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"welcome-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "manager-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDg2MywiaWF0IjoxNzIzMDUwNTYzLCJzY29wZSI6IlJFQUQifQ.elCiaxGv65FPwK_oVvHHW0vavAkkp_DIoJEgAYWtQHc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/api/v1/manager-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"manager-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDg2MywiaWF0IjoxNzIzMDUwNTYzLCJzY29wZSI6IlJFQUQifQ.elCiaxGv65FPwK_oVvHHW0vavAkkp_DIoJEgAYWtQHc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/api/v1/admin-message?message=something",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin-message"
+									],
+									"query": [
+										{
+											"key": "message",
+											"value": "something"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sign-in",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "manager@manager.com",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/v1/sign-in",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"v1",
+										"sign-in"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh-token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyNDM0NjU2MywiaWF0IjoxNzIzMDUwNTYzLCJzY29wZSI6IlJFRlJFU0hfVE9LRU4ifQ.qKivJyYPzjm4Wwo6CI6DNDbD-hNs_C4rzK1D7NfmiIA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/v1/refresh-token",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"v1",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "log-out",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyNDM0NjU2MywiaWF0IjoxNzIzMDUwNTYzLCJzY29wZSI6IlJFRlJFU0hfVE9LRU4ifQ.qKivJyYPzjm4Wwo6CI6DNDbD-hNs_C4rzK1D7NfmiIA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/logout",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sign-up",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b25tb3kiLCJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJleHAiOjE3MjA2MDUyOTEsImlhdCI6MTcxOTMwOTI5MSwic2NvcGUiOiJSRUZSRVNIX1RPS0VOIn0.UuQP_BCUPy431Y83ntyDYQLdZwiLLDIar_JrUx12l9KXaA3ZKyA4rkV0t79zIckE6QfMJSlT4utXbGpxPMYm87qs-hgLZIxgwUlIsfjSguu1s-7Cxl55mTXgoxUSC1fbQs5Tz-fw6QuLLZC9_wVZDeCyqm1wY51WjAX6rFlxtj7_XwaZObMgnvbCb0bYYxaviGs0Ox0FTj5H_Z6pQ9UaEm-hU0xljaY6X0hMg_ffnR-nDo0gQ6z6iHe6lukxu-0fxxvNNaZN39mjaiC-57SVnI-3x7a5mz3-bkpf_hbUGETKFuVVLc01MbHIdz4XeCsnLRqju6JD5shDT2uBNGFPJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Manager4\",\r\n    \"userEmail\": \"manager4@manager.com\",\r\n    \"userMobileNo\": \"8888888888\",\r\n    \"userPassword\": \"password\",\r\n    \"userRole\": \"ROLE_MANAGER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{authServiceCommonUrl}}/v1/sign-up",
+									"host": [
+										"{{gatewayBaseUrl}}{{authServiceCommonUrl}}"
+									],
+									"path": [
+										"v1",
+										"sign-up"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "city-statement-app-account-service",
+					"item": [
+						{
+							"name": "welcome-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDk4OSwiaWF0IjoxNzIzMDUwNjg5LCJzY29wZSI6IlJFQUQifQ.dIUGM2m50Za83WqmlMq87_2vAzK01AfGvrPYx52q2RA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{appAccountServiceCommonUrl}}/api/v1/welcome-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{appAccountServiceCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"welcome-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "manager-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDk4OSwiaWF0IjoxNzIzMDUwNjg5LCJzY29wZSI6IlJFQUQifQ.dIUGM2m50Za83WqmlMq87_2vAzK01AfGvrPYx52q2RA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{appAccountServiceCommonUrl}}/api/v1/manager-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{appAccountServiceCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"manager-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDk4OSwiaWF0IjoxNzIzMDUwNjg5LCJzY29wZSI6IlJFQUQifQ.dIUGM2m50Za83WqmlMq87_2vAzK01AfGvrPYx52q2RA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{appAccountServiceCommonUrl}}/api/v1/admin-message?message=something",
+									"host": [
+										"{{gatewayBaseUrl}}{{appAccountServiceCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin-message"
+									],
+									"query": [
+										{
+											"key": "message",
+											"value": "something"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "city-statement-report-service",
+					"item": [
+						{
+							"name": "wikimedia",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5NzYyMiwiaWF0IjoxNzIzMDk2NzIyLCJzY29wZSI6IlJFQUQifQ.yEoW8uWAFlOJyo68iliM5ODuQslTAwnnG4ArjJL-o98",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}/api/wikimedia/v1",
+									"host": [
+										"{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"wikimedia",
+										"v1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "welcome-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5NzYyMiwiaWF0IjoxNzIzMDk2NzIyLCJzY29wZSI6IlJFQUQifQ.yEoW8uWAFlOJyo68iliM5ODuQslTAwnnG4ArjJL-o98",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}/api/v1/welcome-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"welcome-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "manager-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5NzYyMiwiaWF0IjoxNzIzMDk2NzIyLCJzY29wZSI6IlJFQUQifQ.yEoW8uWAFlOJyo68iliM5ODuQslTAwnnG4ArjJL-o98",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}/api/v1/manager-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"manager-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MDk4OSwiaWF0IjoxNzIzMDUwNjg5LCJzY29wZSI6IlJFQUQifQ.dIUGM2m50Za83WqmlMq87_2vAzK01AfGvrPYx52q2RA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}/api/v1/admin-message?message=something",
+									"host": [
+										"{{gatewayBaseUrl}}{{cityStatementReportCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin-message"
+									],
+									"query": [
+										{
+											"key": "message",
+											"value": "something"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "city-statement-notification-account-service",
+					"item": [
+						{
+							"name": "welcome-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5MzE5NCwiaWF0IjoxNzIzMDkyMjk0LCJzY29wZSI6IlJFQUQifQ.-seE6aFLHvBr1-ccpFo3_CGfiZ_AUBKxXQgJyDCXAAI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{notificationAccCommonUrl}}/api/v1/welcome-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{notificationAccCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"welcome-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "manager-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5MzE5NCwiaWF0IjoxNzIzMDkyMjk0LCJzY29wZSI6IlJFQUQifQ.-seE6aFLHvBr1-ccpFo3_CGfiZ_AUBKxXQgJyDCXAAI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{notificationAccCommonUrl}}/api/v1/manager-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{notificationAccCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"manager-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5MzE5NCwiaWF0IjoxNzIzMDkyMjk0LCJzY29wZSI6IlJFQUQifQ.-seE6aFLHvBr1-ccpFo3_CGfiZ_AUBKxXQgJyDCXAAI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{notificationAccCommonUrl}}/api/v1/admin-message?message=something",
+									"host": [
+										"{{gatewayBaseUrl}}{{notificationAccCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin-message"
+									],
+									"query": [
+										{
+											"key": "message",
+											"value": "something"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "city-statement-notification-card-service",
+					"item": [
+						{
+							"name": "welcome-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5NzQxMiwiaWF0IjoxNzIzMDk2NTEyLCJzY29wZSI6IlJFQUQifQ.K_wzYIO0u-CLL-FGN3RT0ILHPomjxvtrtS1sPKqGF5I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{notificationCardCommonUrl}}/api/v1/welcome-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{notificationCardCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"welcome-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "manager-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5NzQxMiwiaWF0IjoxNzIzMDk2NTEyLCJzY29wZSI6IlJFQUQifQ.K_wzYIO0u-CLL-FGN3RT0ILHPomjxvtrtS1sPKqGF5I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{notificationCardCommonUrl}}/api/v1/manager-message",
+									"host": [
+										"{{gatewayBaseUrl}}{{notificationCardCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"manager-message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin-message",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5NzQxMiwiaWF0IjoxNzIzMDk2NTEyLCJzY29wZSI6IlJFQUQifQ.K_wzYIO0u-CLL-FGN3RT0ILHPomjxvtrtS1sPKqGF5I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{gatewayBaseUrl}}{{notificationCardCommonUrl}}/api/v1/admin-message?message=something",
+									"host": [
+										"{{gatewayBaseUrl}}{{notificationCardCommonUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin-message"
+									],
+									"query": [
+										{
+											"key": "message",
+											"value": "something"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "city-statement-config-server",
+			"item": [
+				{
+					"name": "city-statement-auth-service-actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{configServerBaseUrl}}/city-statement-auth-service/dev",
+							"host": [
+								"{{configServerBaseUrl}}"
+							],
+							"path": [
+								"city-statement-auth-service",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "city-statement-app-account-service-actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{configServerBaseUrl}}/city-statement-app-account-service/dev",
+							"host": [
+								"{{configServerBaseUrl}}"
+							],
+							"path": [
+								"city-statement-app-account-service",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config-server-actuator-env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{configServerBaseUrl}}/actuator/env",
+							"host": [
+								"{{configServerBaseUrl}}"
+							],
+							"path": [
+								"actuator",
+								"env"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config-server-actuator-configprops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{configServerBaseUrl}}/actuator/configprops",
+							"host": [
+								"{{configServerBaseUrl}}"
+							],
+							"path": [
+								"actuator",
+								"configprops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config-server-bus-refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{configServerBaseUrl}}/actuator/busrefresh",
+							"host": [
+								"{{configServerBaseUrl}}"
+							],
+							"path": [
+								"actuator",
+								"busrefresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city-statement-auth-service",
+			"item": [
+				{
+					"name": "welcome-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTI5MSwiaWF0IjoxNzIzMDUwOTkxLCJzY29wZSI6IlJFQUQifQ.u5PD8hysou2GrY91FTejZObQPc_9E_Ke7DYdzOUtj1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/api/v1/welcome-message",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"welcome-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTI5MSwiaWF0IjoxNzIzMDUwOTkxLCJzY29wZSI6IlJFQUQifQ.u5PD8hysou2GrY91FTejZObQPc_9E_Ke7DYdzOUtj1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/api/v1/manager-message",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manager-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTI5MSwiaWF0IjoxNzIzMDUwOTkxLCJzY29wZSI6IlJFQUQifQ.u5PD8hysou2GrY91FTejZObQPc_9E_Ke7DYdzOUtj1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/api/v1/admin-message?message=something",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin-message"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "something"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "manager@manager.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/v1/sign-in",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyNDM0Njk5MSwiaWF0IjoxNzIzMDUwOTkxLCJzY29wZSI6IlJFRlJFU0hfVE9LRU4ifQ.vD0C2bfBp_hAjAq4TA6mPevaH0w-WXMC3qPLb5u9jR0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/v1/refresh-token",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log-out",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyNDM0Njk5MSwiaWF0IjoxNzIzMDUwOTkxLCJzY29wZSI6IlJFRlJFU0hfVE9LRU4ifQ.vD0C2bfBp_hAjAq4TA6mPevaH0w-WXMC3qPLb5u9jR0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/logout",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b25tb3kiLCJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJleHAiOjE3MjA2MDUyOTEsImlhdCI6MTcxOTMwOTI5MSwic2NvcGUiOiJSRUZSRVNIX1RPS0VOIn0.UuQP_BCUPy431Y83ntyDYQLdZwiLLDIar_JrUx12l9KXaA3ZKyA4rkV0t79zIckE6QfMJSlT4utXbGpxPMYm87qs-hgLZIxgwUlIsfjSguu1s-7Cxl55mTXgoxUSC1fbQs5Tz-fw6QuLLZC9_wVZDeCyqm1wY51WjAX6rFlxtj7_XwaZObMgnvbCb0bYYxaviGs0Ox0FTj5H_Z6pQ9UaEm-hU0xljaY6X0hMg_ffnR-nDo0gQ6z6iHe6lukxu-0fxxvNNaZN39mjaiC-57SVnI-3x7a5mz3-bkpf_hbUGETKFuVVLc01MbHIdz4XeCsnLRqju6JD5shDT2uBNGFPJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Manager2\",\r\n    \"userEmail\": \"manager2@manager.com\",\r\n    \"userMobileNo\": \"8888888888\",\r\n    \"userPassword\": \"password\",\r\n    \"userRole\": \"ROLE_MANAGER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/v1/sign-up",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city-statement-app-account-service",
+			"item": [
+				{
+					"name": "manager-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTYxMCwiaWF0IjoxNzIzMDUxMzEwLCJzY29wZSI6IlJFQUQifQ.EZYnOB__gimXu3kYiRfhVr-b_lWxW69MgtYtQr1bbB8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{appAccountServiceBaseUrl}}/api/v1/manager-message",
+							"host": [
+								"{{appAccountServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manager-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "welcome-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTYxMCwiaWF0IjoxNzIzMDUxMzEwLCJzY29wZSI6IlJFQUQifQ.EZYnOB__gimXu3kYiRfhVr-b_lWxW69MgtYtQr1bbB8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{appAccountServiceBaseUrl}}/api/v1/welcome-message",
+							"host": [
+								"{{appAccountServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"welcome-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTYxMCwiaWF0IjoxNzIzMDUxMzEwLCJzY29wZSI6IlJFQUQifQ.EZYnOB__gimXu3kYiRfhVr-b_lWxW69MgtYtQr1bbB8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{appAccountServiceBaseUrl}}/api/v1/admin-message?message=something",
+							"host": [
+								"{{appAccountServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin-message"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "something"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city-statement-report-service",
+			"item": [
+				{
+					"name": "wikimedia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5Njg4NywiaWF0IjoxNzIzMDk1OTg3LCJzY29wZSI6IlJFQUQifQ.67XpdJfAFbD-lPrreNSfhVU0VUtLXcSAJXbrH2EBHlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reportServiceBaseUrl}}/api/wikimedia/v1",
+							"host": [
+								"{{reportServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"wikimedia",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "welcome-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTQyNSwiaWF0IjoxNzIzMDUxMTI1LCJzY29wZSI6IlJFQUQifQ.015yef_vH3CM18IoruOD8uN0wueNM95i_2yrj-YCoYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reportServiceBaseUrl}}/api/v1/welcome-message",
+							"host": [
+								"{{reportServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"welcome-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTQyNSwiaWF0IjoxNzIzMDUxMTI1LCJzY29wZSI6IlJFQUQifQ.015yef_vH3CM18IoruOD8uN0wueNM95i_2yrj-YCoYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{reportServiceBaseUrl}}/api/v1/manager-message",
+							"host": [
+								"{{reportServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manager-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA1MTQyNSwiaWF0IjoxNzIzMDUxMTI1LCJzY29wZSI6IlJFQUQifQ.015yef_vH3CM18IoruOD8uN0wueNM95i_2yrj-YCoYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reportServiceBaseUrl}}/api/v1/admin-message?message=something",
+							"host": [
+								"{{reportServiceBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin-message"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "something"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city-statement-notification-account-service",
+			"item": [
+				{
+					"name": "welcome-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5MTk1MSwiaWF0IjoxNzIzMDkxNjUxLCJzY29wZSI6IlJFQUQifQ.j3JPPV4LZn8QEBUnHIKrzC1VzcO4NBg_ukpeIBthW4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{notificationAccBaseUrl}}/api/v1/welcome-message",
+							"host": [
+								"{{notificationAccBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"welcome-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5MTk1MSwiaWF0IjoxNzIzMDkxNjUxLCJzY29wZSI6IlJFQUQifQ.j3JPPV4LZn8QEBUnHIKrzC1VzcO4NBg_ukpeIBthW4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{notificationAccBaseUrl}}/api/v1/manager-message",
+							"host": [
+								"{{notificationAccBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manager-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5MTk1MSwiaWF0IjoxNzIzMDkxNjUxLCJzY29wZSI6IlJFQUQifQ.j3JPPV4LZn8QEBUnHIKrzC1VzcO4NBg_ukpeIBthW4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{notificationAccBaseUrl}}/api/v1/admin-message?message=something",
+							"host": [
+								"{{notificationAccBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin-message"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "something"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city-statement-notification-card-service",
+			"item": [
+				{
+					"name": "welcome-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5Njg4NywiaWF0IjoxNzIzMDk1OTg3LCJzY29wZSI6IlJFQUQifQ.67XpdJfAFbD-lPrreNSfhVU0VUtLXcSAJXbrH2EBHlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{notificationCardBaseUrl}}/api/v1/welcome-message",
+							"host": [
+								"{{notificationCardBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"welcome-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5Njg4NywiaWF0IjoxNzIzMDk1OTg3LCJzY29wZSI6IlJFQUQifQ.67XpdJfAFbD-lPrreNSfhVU0VUtLXcSAJXbrH2EBHlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{notificationCardBaseUrl}}/api/v1/manager-message",
+							"host": [
+								"{{notificationCardBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"manager-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin-message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA5Njg4NywiaWF0IjoxNzIzMDk1OTg3LCJzY29wZSI6IlJFQUQifQ.67XpdJfAFbD-lPrreNSfhVU0VUtLXcSAJXbrH2EBHlo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{notificationCardBaseUrl}}/api/v1/admin-message?message=something",
+							"host": [
+								"{{notificationCardBaseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin-message"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "something"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJ0b2tlbi12ZXJzaW9uIjoidjEuMCIsImFsZyI6IkhTMjU2IiwiaXNzdWVyIjoiY2JsIn0.eyJpc3MiOiJjYmxfc3RhdGVtZW50Iiwic3ViIjoibWFuYWdlckBtYW5hZ2VyLmNvbSIsImV4cCI6MTcyMzA4OTQ2OSwiaWF0IjoxNzIzMDg5MTY5LCJzY29wZSI6IlJFQUQifQ.DkPQ3vNgiUrzPeT9XfYVyMuGGhp0WgauhemM7N6NBU0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "gatewayBaseUrl",
+			"value": "http://localhost:8989",
+			"type": "string"
+		},
+		{
+			"key": "authServiceCommonUrl",
+			"value": "/city-statement/auth",
+			"type": "string"
+		},
+		{
+			"key": "appAccountServiceCommonUrl",
+			"value": "/city-statement/app-account",
+			"type": "string"
+		},
+		{
+			"key": "cityStatementReportCommonUrl",
+			"value": "/city-statement/report",
+			"type": "string"
+		},
+		{
+			"key": "authServiceBaseUrl",
+			"value": "http://localhost:8585/city-statement/auth",
+			"type": "string"
+		},
+		{
+			"key": "appAccountServiceBaseUrl",
+			"value": "http://localhost:8586/city-statement/app-account",
+			"type": "string"
+		},
+		{
+			"key": "reportServiceBaseUrl",
+			"value": "http://localhost:8787/city-statement/report",
+			"type": "string"
+		},
+		{
+			"key": "configServerBaseUrl",
+			"value": "http://localhost:8888",
+			"type": "string"
+		},
+		{
+			"key": "notificationAccBaseUrl",
+			"value": "http://localhost:9191/city-statement/notification-account",
+			"type": "string"
+		},
+		{
+			"key": "notificationAccCommonUrl",
+			"value": "/city-statement/notification-account",
+			"type": "string"
+		},
+		{
+			"key": "notificationCardBaseUrl",
+			"value": "http://localhost:9292/city-statement/notification-card",
+			"type": "string"
+		},
+		{
+			"key": "notificationCardCommonUrl",
+			"value": "/city-statement/notification-card",
+			"type": "string"
+		}
+	]
+}

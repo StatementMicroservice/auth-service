@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty name="LOG_DIR" source="logging.file.path"/>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
+    <property name="LOG_PATTERN_2" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %class{0}.%method - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                ${LOG_PATTERN}
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/application.log</file>
+
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/application-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="identityLogger_appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            ${LOG_DIR}/identityLogger.log
+        </file>
+
+        <encoder>
+            <pattern>
+                ${LOG_PATTERN_2}
+            </pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_DIR}/identityLogger-%d{yyyy-MM-dd}-%i.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="dashboardLogger_appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            ${LOG_DIR}/dashboardLogger.log
+        </file>
+
+        <encoder>
+            <pattern>
+                ${LOG_PATTERN_2}
+            </pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_DIR}/dashboardLogger-%d{yyyy-MM-dd}-%i.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="com.cbl.statement.security" level="INFO" additivity="false">
+        <appender-ref ref="identityLogger_appender"/>
+    </logger>
+    
+    <logger name="dashboardLogger" level="INFO" additivity="false">
+        <appender-ref ref="dashboardLogger_appender"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="ROLLING_FILE"/>
+    </root>
+</configuration>
